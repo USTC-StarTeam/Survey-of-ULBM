@@ -260,3 +260,9 @@ This research was conducted as a collaboration between University of Science and
 ## How to Contribute
 We welcome contributions from the community! If you have suggestions, improvements, or want to add papers to the reading list, feel free to submit an issue on [GitHub Issues](https://github.com/USTC-StarTeam/Survey-of-ULBM/issues).
 
+## Contact
+For paper questions, please contact:
+
+- First author: Rui Zhou.
+- Repository questions: please open a GitHub issue in this repository.
+

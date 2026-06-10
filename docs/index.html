@@ -3,34 +3,833 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Survey of ULBM: Project Page</title>
-  <meta name="description" content="Project page for A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness.">
+  <title>A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness</title>
   <style>
-:root{--ink:#172033;--muted:#5d6d82;--line:#d7dfeb;--paper:#fff;--soft:#f4f7fb;--blue:#2454d6;--green:#087443;--gold:#9f5f00}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#eef2f7;font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.55;overflow-x:hidden}a{color:var(--blue);text-decoration:none;font-weight:700}a:hover{text-decoration:underline}.wrap{width:min(1120px,calc(100vw - 36px));margin:0 auto}header{background:#fff;border-bottom:1px solid var(--line)}nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:58px;font-size:14px}nav div{display:flex;gap:16px;flex-wrap:wrap}.hero{padding:48px 0 36px;background:#fff}.hero-grid{display:grid;grid-template-columns:minmax(0,1.03fr) minmax(360px,.97fr);gap:32px;align-items:center}.hero-grid>*{min-width:0}.eyebrow{color:var(--blue);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}h1{margin:0;font-size:clamp(32px,4.8vw,52px);line-height:1.05;letter-spacing:0;overflow-wrap:break-word}.subtitle{margin:18px 0 16px;color:var(--muted);font-size:18px;max-width:760px}.paper-ref{color:#324057;font-size:14px;margin:0 0 12px;padding-left:14px;border-left:3px solid var(--blue);max-width:790px}.paper-links{margin:0 0 18px;font-size:14px;font-weight:800}.buttons{display:flex;flex-wrap:wrap;gap:9px}.button{display:inline-flex;align-items:center;min-height:36px;border:1px solid #b8c4d9;background:#fff;color:#24344f;border-radius:6px;padding:0 13px;font-size:13px;font-weight:800}.button.primary{background:var(--blue);border-color:var(--blue);color:#fff}.figure{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px;box-shadow:0 18px 44px rgba(15,23,42,.08);max-width:100%;overflow:hidden}.figure img{display:block;width:100%;max-width:100%;height:auto;border-radius:5px}.caption{margin:10px 4px 0;color:var(--muted);font-size:12px}section{padding:46px 0}h2{margin:0 0 12px;font-size:30px;line-height:1.2;letter-spacing:0}.section-lead{margin:0 0 22px;color:var(--muted);max-width:840px;font-size:16px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px}.card strong{display:block;margin-bottom:8px;font-size:16px}.card p{margin:0;color:var(--muted);font-size:14px}.metric{color:var(--green);font-size:26px;font-weight:900;line-height:1;margin-bottom:10px}pre{overflow:auto;background:#111827;color:#e5e7eb;border-radius:8px;padding:18px;font-size:13px;line-height:1.5;white-space:pre-wrap;word-break:break-word}code{font-family:"Cascadia Mono",Consolas,monospace}footer{padding:26px 0 42px;color:var(--muted);border-top:1px solid var(--line);background:#fff;font-size:14px}@media(max-width:900px){.hero-grid,.cards{grid-template-columns:1fr}.hero{padding-top:34px}nav{align-items:flex-start;flex-direction:column;padding:14px 0}}@media(max-width:560px){.wrap{width:min(1120px,calc(100vw - 22px))}h1{font-size:34px}h2{font-size:26px}.paper-ref{font-size:13px}}
-</style>
+    :root {
+      --ink: #172033;
+      --muted: #53657a;
+      --line: #d8e0ea;
+      --paper: #ffffff;
+      --soft: #f3f6fa;
+      --blue: #2454d6;
+      --green: #087443;
+      --gold: #9f6700;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; overflow-x: hidden; }
+    body {
+      color: var(--ink);
+      background: linear-gradient(180deg, #ffffff 0, #f6f8fb 360px, #eef2f7 100%);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.62;
+    }
+    a { color: var(--blue); font-weight: 700; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 18px; }
+    .site-header { background: #fff; border-bottom: 1px solid var(--line); }
+    nav { min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 18px; font-size: 14px; }
+    nav .brand { color: var(--ink); font-weight: 900; }
+    nav .nav-links { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero { padding: 48px 0 34px; }
+    .eyebrow { margin: 0 0 10px; color: var(--green); font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: .06em; }
+    h1 { margin: 0; max-width: 980px; font-size: clamp(32px, 5vw, 56px); line-height: 1.06; letter-spacing: 0; overflow-wrap: anywhere; word-break: break-word; }
+    .subtitle { max-width: 860px; margin: 18px 0 0; color: var(--muted); font-size: 18px; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 38px; border: 1px solid #b9c5d8; border-radius: 6px;
+      padding: 0 13px; background: var(--paper); color: #263650; font-size: 14px;
+    }
+    main.wrap { padding: 34px 18px 64px; }
+    .toc {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      padding: 14px; margin: 0 0 26px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,.78);
+    }
+    .toc a { font-size: 13px; padding: 6px 8px; border-radius: 6px; background: #eef3fb; color: #26405f; }
+    .content {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: 0 18px 44px rgba(15, 23, 42, .06);
+    }
+    h2 { margin: 42px 0 14px; padding-top: 4px; border-top: 1px solid var(--line); font-size: 30px; line-height: 1.22; letter-spacing: 0; }
+    h2:first-child { margin-top: 0; border-top: 0; }
+    h3 { margin: 28px 0 10px; font-size: 22px; line-height: 1.25; letter-spacing: 0; }
+    p, li, td, th, .nav-links a, .toc a, .button { overflow-wrap: anywhere; word-break: break-word; }
+    p { margin: 0 0 16px; }
+    ul, ol { padding-left: 24px; }
+    li { margin: 6px 0; }
+    img { max-width: 100%; height: auto; border-radius: 6px; }
+    p > img:only-child { display: block; margin: 18px auto; border: 1px solid var(--line); box-shadow: 0 12px 30px rgba(15, 23, 42, .08); }
+    pre { max-width: 100%; overflow-x: auto; white-space: pre; margin: 16px 0; padding: 16px; border-radius: 8px; background: #111827; color: #e5e7eb; line-height: 1.5; }
+    code { font-family: "Cascadia Mono", Consolas, monospace; font-size: .92em; }
+    :not(pre) > code { padding: .12em .35em; border-radius: 4px; background: #eef2f7; color: #17304f; }
+    table { display: block; width: 100%; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 16px 0; }
+    th, td { padding: 9px 10px; border: 1px solid var(--line); vertical-align: top; }
+    th { background: #f4f7fb; text-align: left; }
+    blockquote { margin: 18px 0; padding: 10px 16px; border-left: 4px solid var(--blue); background: #f4f7fb; color: #334155; }
+    footer { padding: 28px 0 44px; color: var(--muted); font-size: 14px; }
+    @media (max-width: 760px) {
+      .wrap { padding: 0 12px; }
+      nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
+      nav .nav-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; width: 100%; }
+      nav .nav-links a { min-width: 0; padding: 6px 8px; border-radius: 6px; background: #eef3fb; font-size: 13px; line-height: 1.25; }
+      .hero { padding: 34px 0 26px; }
+      h1 { max-width: 100%; font-size: 30px; }
+      .subtitle { font-size: 16px; }
+      .quick-links { display: grid; grid-template-columns: minmax(0, 1fr); }
+      .button { min-width: 0; width: 100%; padding: 7px 8px; }
+      .content { padding: 22px 16px; }
+      main.wrap { padding: 28px 12px 56px; }
+      h2 { font-size: 25px; }
+      h3 { font-size: 20px; }
+      pre { white-space: pre-wrap; word-break: break-word; }
+    }
+  </style>
 </head>
 <body>
-  <header><nav class="wrap"><strong>Survey of ULBM</strong><div><a href="#method">1 Method</a><a href="#code">2 Code</a><a href="#results">3 Notes</a><a href="#citation">4 Citation</a></div></nav></header>
-  <main>
-    <section class="hero"><div class="wrap hero-grid"><div>
-      <div class="eyebrow">Preprints 2026</div>
-      <h1>A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness</h1>
-      <p class="subtitle">This survey organizes user lifelong behavior modeling research around efficiency, effectiveness, industrial ROI, and ultra-long user-history deployment.</p>
-      <p class="paper-ref">Rui Zhou, Qinglin Jia, Bo Chen, Peng Xu, Yijia Sun, Siyuan Lou, Chaoxin Fu, Mengyuan Fu, Guoming Shen, Zheli Zhou, and others. <strong>A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness.</strong> Preprints, 2026.</p>
-      <p class="paper-links"><a href="https://www.preprints.org/manuscript/202601.1559">Preprint</a> / <a href="https://github.com/USTC-StarTeam/Survey-of-ULBM">Code</a> / <a href="#citation">Citation</a></p>
-      <div class="buttons"><a class="button primary" href="https://github.com/USTC-StarTeam/Survey-of-ULBM">Code</a><a class="button" href="https://www.preprints.org/manuscript/202601.1559">Preprint</a></div>
-    </div><figure class="figure"><img src="assets/roi.png" alt="Survey of ULBM method overview"><figcaption class="caption">The survey frames ULBM through the industrial efficiency-effectiveness balance and ROI equilibrium.</figcaption></figure></div></section>
-    <section id="method"><div class="wrap"><h2>1. Method At A Glance</h2><p class="section-lead">This survey organizes user lifelong behavior modeling research around efficiency, effectiveness, industrial ROI, and ultra-long user-history deployment.</p><div class="cards"><article class="card"><strong>1. Summarizes</strong><p>Summarizes search-based, compression-based, hybrid, and end-to-end ULBM methods.</p></article><article class="card"><strong>2. Tracks</strong><p>Tracks heterogeneous behavior modeling, user interest modeling, and knowledge-enhanced approaches.</p></article><article class="card"><strong>3. Maintains</strong><p>Maintains dataset statistics for ultra-long user behavior benchmarks.</p></article></div></div></section>
-    <section id="code"><div class="wrap"><h2>2. Code And Usage</h2><p class="section-lead">Start from the repository commands below, then follow README details for data paths, model checkpoints, and evaluation outputs.</p><pre><code>Browse README.md for curated methods and datasets.
-Open issues or pull requests to add new ULBM papers.</code></pre></div></section>
-    <section id="results"><div class="wrap"><h2>3. Repository Notes</h2><div class="cards"><article class="card"><div class="metric">Paper</div><strong>Identity first</strong><p>README and this page expose paper links, code links, and citation in the first screen.</p></article><article class="card"><div class="metric">Code</div><strong>Runnable path</strong><p>Usage instructions point to the maintained scripts without changing model behavior.</p></article><article class="card"><div class="metric">Assets</div><strong>Visual summary</strong><p>Figures are stored under <code>docs/assets/</code> so GitHub Pages can serve them reliably.</p></article></div></div></section>
-    <section id="citation"><div class="wrap"><h2>4. Citation</h2><pre><code>@article{zhou2026survey,
-  title = {A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness},
-  author = {Zhou, Rui and Jia, Qinglin and Chen, Bo and Xu, Peng and Sun, Yijia and Lou, Siyuan and Fu, Chaoxin and Fu, Mengyuan and Shen, Guoming and Zhou, Zheli and others},
-  year = {2026},
-  publisher = {Preprints}
-}</code></pre></div></section>
+  <header class="site-header">
+    <nav class="wrap">
+      <a class="brand" href="https://github.com/USTC-StarTeam/Survey-of-ULBM">USTC-StarTeam/Survey-of-ULBM</a>
+      <div class="nav-links"><a href="#1-paper">1. Paper</a><a href="#2-highlights">2. Highlights</a><a href="#3-citation">3. Citation</a><a href="#table-of-contents">Table of Contents</a><a href="#introduction">Introduction</a><a href="#survey-scope">Survey Scope</a><a href="#efficiency-effectiveness-balance">Efficiency-Effectiveness Balance</a><a href="#papers">Papers</a><a href="#datasets">Datasets</a><a href="#acknowledgement">Acknowledgement</a><a href="#how-to-contribute">How to Contribute</a><a href="#contact">Contact</a></div>
+    </nav>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Academic Project Page</p>
+        <h1>A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness</h1>
+        <p class="subtitle">This survey provides an in-depth examination of existing User Lifelong Behavior Modeling (ULBM) methods from an industrial perspective, with a particular focus on their performance under the efficiency–effectiveness balance, aiming to sustain a stable return on investment (ROI) as user lifelong behavior sequences continue to grow.</p>
+        <div class="quick-links"><a class="button" href="https://www.preprints.org/manuscript/202601.1559">Preprint</a><a class="button" href="https://ustc-starteam.github.io/Survey-of-ULBM/">Project Page</a><a class="button" href="https://github.com/USTC-StarTeam/Survey-of-ULBM">Code</a><a class="button" href="#citation">Citation</a><a class="button" href="https://github.com/USTC-StarTeam/Survey-of-ULBM">GitHub Repo</a></div>
+      </div>
+    </section>
+  </header>
+  <main class="wrap">
+    <div class="toc"><a href="#1-paper">1. Paper</a><a href="#2-highlights">2. Highlights</a><a href="#3-citation">3. Citation</a><a href="#table-of-contents">Table of Contents</a><a href="#introduction">Introduction</a><a href="#survey-scope">Survey Scope</a><a href="#efficiency-effectiveness-balance">Efficiency-Effectiveness Balance</a><a href="#papers">Papers</a><a href="#datasets">Datasets</a><a href="#acknowledgement">Acknowledgement</a><a href="#how-to-contribute">How to Contribute</a><a href="#contact">Contact</a></div>
+    <article class="content">
+<p><a href="https://ustc-starteam.github.io/Survey-of-ULBM/"><img src="https://img.shields.io/badge/Project-Page-2454d6.svg" alt="Project Page"></a>
+<a href="https://www.preprints.org/manuscript/202601.1559"><img src="https://img.shields.io/badge/Preprints-2026-4b6cb7.svg" alt="Preprint"></a>
+<a href="https://github.com/USTC-StarTeam/Survey-of-ULBM"><img src="https://img.shields.io/badge/Topic-User%20Lifelong%20Behavior%20Modeling-087443.svg" alt="Survey"></a></p>
+<p>Official repository for <strong>"A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness"</strong>.</p>
+<h2 id="1-paper">1. Paper</h2>
+<p>Rui Zhou, Qinglin Jia, Bo Chen, Peng Xu, Yijia Sun, Siyuan Lou, Chaoxin Fu, Mengyuan Fu, Guoming Shen, Zheli Zhou, and others. <strong>A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness.</strong> Preprints, 2026.</p>
+<p><a href="https://www.preprints.org/manuscript/202601.1559">Preprint</a> / <a href="https://ustc-starteam.github.io/Survey-of-ULBM/">Project Page</a> / <a href="https://github.com/USTC-StarTeam/Survey-of-ULBM">Code</a> / <a href="#citation">Citation</a></p>
+<p>This survey provides an in-depth examination of existing User Lifelong Behavior Modeling (ULBM) methods from an industrial perspective, with a particular focus on their performance under the efficiency–effectiveness balance, aiming to sustain a stable return on investment (ROI) as user lifelong behavior sequences continue to grow.</p>
+<p>We will continue to track and summarize emerging ULBM research, with particular attention to approaches that have been validated in real-world industrial settings, in order to facilitate the continued advancement of this field.</p>
+<h2 id="2-highlights">2. Highlights</h2>
+<ul>
+<li>Tracks representative ULBM methods from short-sequence recommenders to ultra-long industrial models.</li>
+<li>Organizes methods by efficiency optimizations, effectiveness optimizations, and the efficiency-effectiveness balance.</li>
+<li>Provides curated dataset statistics for ultra-long behavior modeling benchmarks.</li>
+<li>Welcomes community contributions to keep the survey current.</li>
+</ul>
+<p><a id="citation"></a></p>
+<h2 id="3-citation">3. Citation</h2>
+<p>If you find this survey useful, please cite the following paper:</p>
+<pre><code class="language-bibtex">@article{zhou2026survey,
+  title={A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness},
+  author={Zhou, Rui and Jia, Qinglin and Chen, Bo and Xu, Peng and Sun, Yijia and Lou, Siyuan and Fu, Chaoxin and Fu, Mengyuan and Shen, Guoming and Zhou, Zheli and others},
+  year={2026},
+  publisher={Preprints}
+}</code></pre>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#1-paper">Paper</a></li>
+<li><a href="#2-highlights">Highlights</a></li>
+<li><a href="#3-citation">Citation</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#survey-scope">Survey Scope</a></li>
+<li><a href="#efficiency-effectiveness-balance">Efficiency-Effectiveness Balance</a><ul>
+<li><a href="#efficiency-optimizations">Efficiency Optimizations</a><ul>
+<li><a href="#algorithmic">Algorithmic</a></li>
+<li><a href="#infrastructure">Infrastructure</a></li>
+</ul>
+</li>
+<li><a href="#effectiveness-optimizations">Effectiveness Optimizations</a></li>
+</ul>
+</li>
+<li><a href="#papers">Papers</a></li>
+<li><a href="#datasets">Datasets</a></li>
+<li><a href="#acknowledgement">Acknowledgement</a></li>
+<li><a href="#how-to-contribute">How to Contribute</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>User Lifelong Behavior Modeling (ULBM) aims to capture users’ long-term and continuously evolving preferences by leveraging their lifelong interaction histories. Owing to its defining characteristics, including ultra-long behavior sequences and heterogeneous user actions, deploying ULBM in industrial recommender systems poses substantial challenges in balancing efficiency and effectiveness, which is critical for sustaining a stable return on investment (ROI) as user behavior sequences continue to grow.</p>
+<p>This survey examines ULBM approaches from two complementary perspectives: efficiency-aware designs, which emphasize algorithmic and engineering optimizations to improve scalability, and effectiveness-oriented modeling strategies, which focus on enhancing representation capacity through expressive interaction modeling, fine-grained interest mining, and the incorporation of external knowledge. In addition, we summarize representative datasets for ULBM evaluation to provide practical guidance and support future research.</p>
+<p>Through this survey, we aim to provide researchers and practitioners with a comprehensive set of insights and practical references, and to stimulate further exploration of scalable and effective ULBM solutions under real-world constraints.</p>
+<p>The shift of the ROI equilibrium point in industrial scenarios</p>
+<p><img src="assets/ROI.png" alt="ROI"></p>
+<h2 id="survey-scope">Survey Scope</h2>
+<p>This survey covers a wide range of topics relevant to ULBM, including:</p>
+<ul>
+<li>Ultra-long sequence modeling.</li>
+<li>Heterogeneous behavior modeling.</li>
+<li>Industrial deployment under the efficiency–effectiveness balance (EEB).</li>
+</ul>
+<h2 id="efficiency-effectiveness-balance">Efficiency-Effectiveness Balance</h2>
+<h3 id="efficiency-optimizations">Efficiency Optimizations</h3>
+<h4 id="algorithmic">Algorithmic</h4>
+<p>ULBM commonly adopts a two-stage paradigm of <em>preprocess first, encode later</em> to reduce the scale of user behavior sequences and achieve a balance between efficiency and effectiveness. This paradigm can be further categorized into search-based methods and compression-based methods. In this context, the <em>General Search Unit</em> (GSU) and the <em>Interest Reduction Unit</em> (IRU) serve as key components for improving efficiency.</p>
+<p>Trend chart of existing ULBM work on algorithmic optimizations:</p>
+<p><img src="assets/alo.png" alt="ALO"></p>
+<h4 id="infrastructure">Infrastructure</h4>
+<p>Industrial-scale ULBM faces strict latency and throughput requirements due to ultra-long sequences, persistent user states, and frequent online inference. Infrastructure optimizations aim to increase throughput, reduce GPU memory and storage, and shorten response time. These optimizations can be categorized into three main types: <em>custom kernels</em>, <em>precision optimization</em>, and <em>multi-level caching</em>.</p>
+<p>The infrastructure optimizations of ULBM can be organized along three dimensions:</p>
+<p><img src="assets/infra.png" alt="INFRA"></p>
+<h3 id="effectiveness-optimizations">Effectiveness Optimizations</h3>
+<p>Effectiveness in ULBM refers to improving the quality of user representations by addressing key limitations: summarizing long-term interactions may lose critical dependencies, overlapping behaviors introduce noise, and relying solely on observed actions limits semantic understanding.<br>
+To tackle these challenges, effectiveness optimizations focus on three main directions: <em>advancing interaction modeling</em>, <em>fine-grained user interest understanding</em>, and <em>incorporating external knowledge</em>.</p>
+<p>The effectiveness optimizations of ULBM can be characterized along three dimensions:</p>
+<p><img src="assets/Effectiveness.png" alt="Effectiveness"></p>
+<h2 id="papers">Papers</h2>
+<p>We provide a curated collection of references related to ULBM, including: short-sequence modeling, search-based methods, compression-based methods, Hybrid methods, End-to-End methods, Methods on heterogeneous user behaviors, Methods on user interest, Methods on incorporation of external knowledge.</p>
+<ul>
+<li><strong>Short-sequence Modeling:</strong> Early and foundational methods that provide essential modeling principles for capturing user preferences through short-term interaction dynamics.</li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:center">Method</th>
+<th style="text-align:center">Paper Title</th>
+<th style="text-align:center">Published At</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em>GwEN</em></td>
+<td style="text-align:center"><a href="https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/45530.pdf">Deep Neural Networks for YouTube Recommendations</a></td>
+<td style="text-align:center">RecSys'16</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>DIN</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/1706.06978">Deep Interest Network for Click-Through Rate Prediction</a></td>
+<td style="text-align:center">KDD'18</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>DIEN</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/1809.03672">Deep Interest Evolution Network for Click-Through Rate Prediction</a></td>
+<td style="text-align:center">AAAI'19</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>BST</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/1905.06874">Behavior Sequence Transformer for E-commerce Recommendation in Alibaba</a></td>
+<td style="text-align:center">KDD'19</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Search-based Methods:</strong> Methods that enhance both efficiency and modeling effectiveness by searching behavior subsets most relevant to the current context from long user interaction histories.</li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:center">Method</th>
+<th style="text-align:center">Paper Title</th>
+<th style="text-align:center">Published At</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em>SIM</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2006.05639">Search-based User Interest Modeling with Lifelong Sequential Behavior Data for Click-Through Rate Prediction</a></td>
+<td style="text-align:center">CIKM'20</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>TWIN</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2302.02352">TWIN: TWo-stage Interest Network for Lifelong User Behavior Modeling in CTR Prediction at Kuaishou</a></td>
+<td style="text-align:center">KDD'23</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>TransAct V2</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2506.02267">TransAct V2: Lifelong User Action Sequence Modeling on Pinterest Recommendation</a></td>
+<td style="text-align:center">CIKM'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>DARE</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2410.02604">Long-Sequence Recommendation Models Need Decoupled Embeddings</a></td>
+<td style="text-align:center">ICLR'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>MARM</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2411.09425">MARM: Unlocking the Future of Recommendation Systems through Memory Augmentation and Scalable Complexity</a></td>
+<td style="text-align:center">CIKM'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>GIST</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2507.05142">GIST: Cross-Domain Click-Through Rate Prediction via Guided Content-Behavior Distillation</a></td>
+<td style="text-align:center">arXiv'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>LCN</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2312.06424">Cross Domain LifeLong Sequential Modeling for Online Click-Through Rate Prediction</a></td>
+<td style="text-align:center">KDD'24</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>LIC</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2501.15817">Long-Term Interest Clock: Fine-Grained Time Perception in Streaming Recommendation System</a></td>
+<td style="text-align:center">WWW'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>MIRRN</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2411.15005">Multi-granularity interest retrieval and refinement network for long-term user behavior modeling in ctr prediction</a></td>
+<td style="text-align:center">KDD'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>LongRetriever</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2508.15486">LongRetriever: Towards Ultra-Long Sequence based Candidate Retrieval for Recommendation</a></td>
+<td style="text-align:center">arXiv'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>ETA</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2108.04468">End-to-End User Behavior Retrieval in Click-Through RatePrediction Model</a></td>
+<td style="text-align:center">arXiv'21</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>SDIM</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2205.10249">Sampling Is All You Need on Modeling Long-Term User Behaviors for CTR Prediction</a></td>
+<td style="text-align:center">CIKM'22</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>CoFARS</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2403.12566">Context-based Fast Recommendation Strategy for Long User Behavior Sequence in Meituan Waimai</a></td>
+<td style="text-align:center">WWW'24</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>UBR4CTR</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2005.14171">User Behavior Retrieval for Click-Through Rate Prediction</a></td>
+<td style="text-align:center">SIGIR'20</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>QIN</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2310.06444">Query-dominant User Interest Network for Large-Scale Search Ranking</a></td>
+<td style="text-align:center">CIKM'23</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>MUSE</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2512.07216">MUSE: A Simple Yet Effective Multimodal Search-Based Framework for Lifelong User Interest Modeling</a></td>
+<td style="text-align:center">arXiv'25</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Compression-based Methods:</strong> Methods that transform long behavior sequences into a limited number of compact representations to support scalable and effective user modeling.</li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:center">Method</th>
+<th style="text-align:center">Paper Title</th>
+<th style="text-align:center">Published At</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em>DV365</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2506.00450">DV365: Extremely Long User History Modeling at Instagram</a></td>
+<td style="text-align:center">KDD'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>ULIM</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2507.10097">User Long-Term Multi-Interest Retrieval Model for Recommendation</a></td>
+<td style="text-align:center">RecSys'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>PinFM</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2507.12704">PinFM: Foundation Model for User Activity Sequences at a Billion-scale Visual Discovery Platform</a></td>
+<td style="text-align:center">RecSys'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>LREA</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2503.02542">LREA: Low-Rank Efficient Attention on Modeling Long-Term User Behaviors for CTR Prediction</a></td>
+<td style="text-align:center">SIGIR'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>HiT-LBM</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2505.19505">Hierarchical Tree Search-based User Lifelong Behavior Modeling on Large Language Model</a></td>
+<td style="text-align:center">SIGIR'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>Climber</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2502.09888">An Efficient Large Recommendation Model: Towards a Resource-Optimal Scaling Law</a></td>
+<td style="text-align:center">CIKM'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>VQL</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2508.17125">VQL: An End-to-End Context-Aware Vector Quantization Attention for Ultra-Long User Behavior Modeling</a></td>
+<td style="text-align:center">arXiv'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>ENCODE</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2508.13567">ENCODE: Breaking the Trade-Off Between Performance and Efficiency in Long-Term User Behavior Modeling</a></td>
+<td style="text-align:center">TKDE'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>Trinity</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2402.02842">Trinity: Syncretizing Multi-/Long-tail/Long-term Interests All in One</a></td>
+<td style="text-align:center">KDD'24</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>UUM</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2504.21838">Learning Universal User Representations Leveraging Cross-domain User Intent at Snapchat</a></td>
+<td style="text-align:center">SIGIR'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>DMQN</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2508.20865">Deep Multiple Quantization Network on Long Behavior Sequence for Click-Through Rate Prediction</a></td>
+<td style="text-align:center">SIGIR'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>DiffuMin</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2508.15311">Modeling Long-term User Behaviors with Diffusion-driven Multi-interest Network for CTR Prediction</a></td>
+<td style="text-align:center">RecSys'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>CHIME</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2504.06780">CHIME: A Compressive Framework for Holistic Interest Modeling</a></td>
+<td style="text-align:center">arXiv'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>MIMN</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/1905.09248">Practice on Long Sequential User Behavior Modeling for Click-Through Rate Prediction</a></td>
+<td style="text-align:center">KDD'19</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>CAIN</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2502.12634">Context-Aware Lifelong Sequential Modeling for Online Click-Through Rate Prediction</a></td>
+<td style="text-align:center">arXiv'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>VISTA</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2510.22049">Massive Memorization with Hundreds of Trillions of Parameters for Sequential Transducer Generative Recommenders</a></td>
+<td style="text-align:center">arXiv'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>DGIN</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2311.10764">Deep Group Interest Modeling of Full Lifelong User Behaviors for CTR Prediction</a></td>
+<td style="text-align:center">arXiv'23</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Hybrid Methods:</strong> Approaches that combine retrieval-based and compression-based strategies to balance efficiency and effectiveness when modeling ultra-long user behavior sequences. Here, <em>C+S</em> means compression first,search later and <em>S+C</em> means search first,compression later.</li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:center">Method</th>
+<th style="text-align:center">Paper Title</th>
+<th style="text-align:center">Published At</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em>ADFM<sub>C+S<sub></em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2204.11587">Adversarial Filtering Modeling on Long-term User Behavior Sequences for Click-Through Rate Prediction</a></td>
+<td style="text-align:center">SIGIR'22</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>HBM<sub>C+S<sub></em></td>
+<td style="text-align:center"><a href="https://dl.acm.org/doi/10.1145/3726302.3730207">Hierarchical User Long-term Behavior Modeling for Click-Through Rate Prediction</a></td>
+<td style="text-align:center">SIGIR'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>TWIN V2<sub>C+S<sub></em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2407.16357">TWIN V2: Scaling Ultra-Long User Behavior Sequence Modeling for Enhanced CTR Prediction at Kuaishou</a></td>
+<td style="text-align:center">CIKM'24</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>DMGIN<sub>C+S<sub></em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2508.21801">DMGIN: How Multimodal LLMs Enhance Large Recommendation Models for Lifelong User Post-click Behaviors</a></td>
+<td style="text-align:center">arXiv'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>DILN<sub>S+C<sub></em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2505.08471">Interest Changes: Considering User Interest Life Cycle in Recommendation Systems</a></td>
+<td style="text-align:center">SIGIR'25</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>End-to-End Methods:</strong> Approaches that directly model ultra-long user behavior sequences in a unified framework without explicit preprocessing, enabling holistic preference learning.</li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:center">Method</th>
+<th style="text-align:center">Paper Title</th>
+<th style="text-align:center">Published At</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em>STCA</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2511.06077">Make It Long, Keep It Fast: End-to-End 10k-Sequence Modeling at Billion Scale on Douyin</a></td>
+<td style="text-align:center">arXiv'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>LONGER</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2505.04421">LONGER: Scaling Up Long Sequence Modeling in Industrial Recommenders</a></td>
+<td style="text-align:center">RecSys'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>HSTU</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2402.17152">Actions Speak Louder than Words: Trillion-Parameter Sequential Transducers for Generative Recommendations</a></td>
+<td style="text-align:center">ICML'24</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>MTGR</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2505.18654">MTGR: Industrial-Scale Generative Recommendation Framework in Meituan</a></td>
+<td style="text-align:center">CIKM'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>GenRank</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2505.04180">Towards Large-scale Generative Ranking</a></td>
+<td style="text-align:center">arXiv'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>Fuxi-α</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2502.03036">FuXi-α: Scaling Recommendation Model with Feature Interaction Enhanced Transformer</a></td>
+<td style="text-align:center">WWW'25</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Methods on heterogeneous user behaviors:</strong> Approaches that explicitly model multiple types of user actions to capture diverse preference signals and their interactions within user behavior sequences.</li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:center">Method</th>
+<th style="text-align:center">Paper Title</th>
+<th style="text-align:center">Published At</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em>GNMR</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2201.02307">Multi-Behavior Enhanced Recommendation with Cross-Interaction Collaborative Relation Modeling</a></td>
+<td style="text-align:center">ICDE'21</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>MB-CGCN</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2303.15720"> Multi-Behavior Recommendation with Cascading Graph Convolution Networks </a></td>
+<td style="text-align:center">WWW'23</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>MB-GMN</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2110.03969">Graph Meta Network for Multi-Behavior Recommendation  </a></td>
+<td style="text-align:center">SIGIR'21</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>MBGCN</em></td>
+<td style="text-align:center"><a href="https://dl.acm.org/doi/10.1145/3397271.3401072">Multi-behavior Recommendation with Graph Convolutional Networks</a></td>
+<td style="text-align:center">SIGIR'20</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>CRGCN</em></td>
+<td style="text-align:center"><a href="https://dl.acm.org/doi/10.1145/3587693">Cascading Residual Graph Convolutional Network for Multi-Behavior Recommendation</a></td>
+<td style="text-align:center">TOIS'23</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>CML</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2202.08523">Contrastive Meta Learning with Behavior Multiplicity for Recommendation</a></td>
+<td style="text-align:center">WSDM'22</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>CMBR</em></td>
+<td style="text-align:center"><a href="https://dl.acm.org/doi/10.1145/3637528.3671572">Controllable Multi-Behavior Recommendation for In-Game Skins with Large Sequential Model</a></td>
+<td style="text-align:center">KDD'24</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Methods on user interest:</strong> Approaches that represent users with multiple interest vectors to capture diverse and evolving preferences within user behavior sequences.</li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:center">Method</th>
+<th style="text-align:center">Paper Title</th>
+<th style="text-align:center">Published At</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em>MIND</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/1904.08030">Multi-Interest Network with Dynamic Routing for Recommendation at Tmall</a></td>
+<td style="text-align:center">CIKM'19</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>ComiRec</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2005.09347">Controllable Multi-Interest Framework for Recommendation</a></td>
+<td style="text-align:center">KDD'20</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>OnePiece</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2509.18091">OnePiece: Bringing Context Engineering and Reasoning to Industrial Cascade Ranking System</a></td>
+<td style="text-align:center">arXiv'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>ReaRec</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2503.22675">Think Before Recommend: Unleashing the Latent Reasoning Power for Sequential Recommendation</a></td>
+<td style="text-align:center">arXiv'25</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Methods on incorporation of external knowledge:</strong> Approaches that enhance user representation by incorporating external knowledge sources to enrich semantic understanding beyond observed behaviors.</li>
+</ul>
+<table>
+<thead><tr>
+<th style="text-align:center">Method</th>
+<th style="text-align:center">Paper Title</th>
+<th style="text-align:center">Published At</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em>KGCL</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2205.00976">Knowledge Graph Contrastive Learning for Recommendation</a></td>
+<td style="text-align:center">SIGIR'22</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>KMCLR</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2301.05403">Knowledge enhancement for contrastive multi-behavior recommendation</a></td>
+<td style="text-align:center">WSDM'23</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>Eager</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2406.14017">Eager: Two-stream generative recommender with behavior-semantic collaboration</a></td>
+<td style="text-align:center">KDD'24</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>ReLLa</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2308.11131">Rella: Retrieval-enhanced large language models for lifelong sequential behavior comprehension in recommendation</a></td>
+<td style="text-align:center">WWW'24</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>ReLLaX</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2501.13344">Full-stack optimized large language models for lifelong sequential behavior comprehension in recommendation</a></td>
+<td style="text-align:center">TORS'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>KAR</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2306.10933">Towards Open-World Recommendation with Knowledge Augmentation from Large Language Models</a></td>
+<td style="text-align:center">RecSys'24</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>LIBER</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2411.14713">LIBER: Lifelong User Behavior Modeling Based on Large Language Models</a></td>
+<td style="text-align:center">arXiv'24</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>OneRec-Think</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2510.11639">OneRec-Think: In-Text Reasoning for Generative Recommendation</a></td>
+<td style="text-align:center">arXiv'25</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>RecZERO</em></td>
+<td style="text-align:center"><a href="https://arxiv.org/abs/2510.23077">Think before recommendation: Autonomous reasoning-enhanced recommender</a></td>
+<td style="text-align:center">NIPS'25</td>
+</tr>
+</tbody>
+</table>
+<h2 id="datasets">Datasets</h2>
+<p>We summarize representative datasets for evaluating ULBM methods, covering ultra-long behavior sequences, heterogeneous user actions, and realistic industrial settings.</p>
+<table>
+<thead><tr>
+<th style="text-align:left">Dataset</th>
+<th style="text-align:right">#Users</th>
+<th style="text-align:right">#Items</th>
+<th style="text-align:right">#Interactions</th>
+<th style="text-align:right">Avg. Length</th>
+<th style="text-align:right">#Behavior Types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://nijianmo.github.io/amazon/index.html"><em>Amazon Books</em></a></td>
+<td style="text-align:right">694,897</td>
+<td style="text-align:right">686,623</td>
+<td style="text-align:right">10,053,086</td>
+<td style="text-align:right">14.47</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://grouplens.org/datasets/movielens/1m/"><em>MovieLens-1M</em></a></td>
+<td style="text-align:right">6,040</td>
+<td style="text-align:right">3,416</td>
+<td style="text-align:right">999,611</td>
+<td style="text-align:right">165.50</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://grouplens.org/datasets/movielens/20m/"><em>MovieLens-20M</em></a></td>
+<td style="text-align:right">138,493</td>
+<td style="text-align:right">26,744</td>
+<td style="text-align:right">20,000,263</td>
+<td style="text-align:right">144.41</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://tianchi.aliyun.com/dataset/dataDetail?dataId=649"><em>Taobao</em></a></td>
+<td style="text-align:right">987,994</td>
+<td style="text-align:right">4,162,024</td>
+<td style="text-align:right">100,150,807</td>
+<td style="text-align:right">101.37</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://tianchi.aliyun.com/dataset/dataDetail?dataId=42"><em>Tmall</em></a></td>
+<td style="text-align:right">424,170</td>
+<td style="text-align:right">1,090,390</td>
+<td style="text-align:right">54,925,331</td>
+<td style="text-align:right">129.49</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://tianchi.aliyun.com/dataset/dataDetail?dataId=56"><em>Alibaba</em></a></td>
+<td style="text-align:right">1,141,729</td>
+<td style="text-align:right">461,527</td>
+<td style="text-align:right">700,000,000</td>
+<td style="text-align:right">613.11</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://kuairand.com/"><em>KuaiRand-Pure</em></a></td>
+<td style="text-align:right">27,285</td>
+<td style="text-align:right">7,551</td>
+<td style="text-align:right">1,436,609</td>
+<td style="text-align:right">52.65</td>
+<td style="text-align:right">7</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://kuairand.com/"><em>KuaiRand-1K</em></a></td>
+<td style="text-align:right">1,000</td>
+<td style="text-align:right">4,369,953</td>
+<td style="text-align:right">11,713,045</td>
+<td style="text-align:right">11,713.05</td>
+<td style="text-align:right">7</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://kuairand.com/"><em>KuaiRand-27K</em></a></td>
+<td style="text-align:right">27,285</td>
+<td style="text-align:right">32,038,725</td>
+<td style="text-align:right">322,278,385</td>
+<td style="text-align:right">11,811.56</td>
+<td style="text-align:right">7</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://kuairec.com/"><em>KuaiRec-Small</em></a></td>
+<td style="text-align:right">1,411</td>
+<td style="text-align:right">3,327</td>
+<td style="text-align:right">4,676,570</td>
+<td style="text-align:right">3,314.37</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://kuairec.com/"><em>KuaiRec-Big</em></a></td>
+<td style="text-align:right">7,176</td>
+<td style="text-align:right">10,728</td>
+<td style="text-align:right">12,530,806</td>
+<td style="text-align:right">1,746.21</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://kuaisar.github.io/"><em>KuaiSAR-S</em></a></td>
+<td style="text-align:right">25,877</td>
+<td style="text-align:right">3,026,189</td>
+<td style="text-align:right">5,059,169</td>
+<td style="text-align:right">195.51</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://kuaisar.github.io/"><em>KuaiSAR-R</em></a></td>
+<td style="text-align:right">25,877</td>
+<td style="text-align:right">4,046,367</td>
+<td style="text-align:right">14,605,716</td>
+<td style="text-align:right">564.43</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://kuaisar.github.io/"><em>KuaiSAR-all</em></a></td>
+<td style="text-align:right">25,877</td>
+<td style="text-align:right">6,890,707</td>
+<td style="text-align:right">19,664,885</td>
+<td style="text-align:right">759.94</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://tenrec0.github.io/"><em>TenRec-QK-video</em></a></td>
+<td style="text-align:right">5,022,750</td>
+<td style="text-align:right">3,753,436</td>
+<td style="text-align:right">493,458,970</td>
+<td style="text-align:right">98.24</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://tenrec0.github.io/"><em>TenRec-QK-article</em></a></td>
+<td style="text-align:right">1,325,838</td>
+<td style="text-align:right">220,122</td>
+<td style="text-align:right">46,111,728</td>
+<td style="text-align:right">34.78</td>
+<td style="text-align:right">6</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://tenrec0.github.io/"><em>TenRec-QB-video</em></a></td>
+<td style="text-align:right">34,240</td>
+<td style="text-align:right">130,637</td>
+<td style="text-align:right">2,442,299</td>
+<td style="text-align:right">71.33</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://tenrec0.github.io/"><em>TenRec-QB-article</em></a></td>
+<td style="text-align:right">24,516</td>
+<td style="text-align:right">7,355</td>
+<td style="text-align:right">348,736</td>
+<td style="text-align:right">14.22</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://huggingface.co/datasets/yandex/yambda"><em>Yambda-50M</em></a></td>
+<td style="text-align:right">10,000</td>
+<td style="text-align:right">934,057</td>
+<td style="text-align:right">48,000,000</td>
+<td style="text-align:right">4,800.00</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://huggingface.co/datasets/yandex/yambda"><em>Yambda-500M</em></a></td>
+<td style="text-align:right">100,000</td>
+<td style="text-align:right">3,004,578</td>
+<td style="text-align:right">480,000,000</td>
+<td style="text-align:right">4,800.00</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://huggingface.co/datasets/yandex/yambda"><em>Yambda-5B</em></a></td>
+<td style="text-align:right">1,000,000</td>
+<td style="text-align:right">9,390,623</td>
+<td style="text-align:right">4,800,000,000</td>
+<td style="text-align:right">4,800.00</td>
+<td style="text-align:right">5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="acknowledgement">Acknowledgement</h2>
+<p>This research was conducted as a collaboration between University of Science and Technology of China and Kuaishou Technology.</p>
+<table>
+  <tr>
+    <td align="center"><img src="assets/USTC_logo_2008.svg.png" width="100px" alt="University of Science and Technology of China"/><br /><sub><b>University of Science and Technology of China</b></sub></td>
+    <td align="center"><img src="assets/Kuaishou_logo_(2020).png" width="100px" alt="Kuaishou Technology"/><br /><sub><b>Kuaishou Technology</b></sub></td>
+  </tr>
+</table>
+<h2 id="how-to-contribute">How to Contribute</h2>
+<p>We welcome contributions from the community! If you have suggestions, improvements, or want to add papers to the reading list, feel free to submit an issue on <a href="https://github.com/USTC-StarTeam/Survey-of-ULBM/issues">GitHub Issues</a>.</p>
+<h2 id="contact">Contact</h2>
+<p>For paper questions, please contact:</p>
+<ul>
+<li>First author: Rui Zhou.</li>
+<li>Repository questions: please open a GitHub issue in this repository.</li>
+</ul>
+
+    </article>
   </main>
-  <footer><div class="wrap">Code: <a href="https://github.com/USTC-StarTeam/Survey-of-ULBM">USTC-StarTeam/Survey-of-ULBM</a>.</div></footer>
+  <footer>
+    <div class="wrap">This project page mirrors the public-facing README content for quick paper, code, result, citation, and contact access.</div>
+  </footer>
 </body>
 </html>
