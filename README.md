@@ -26,6 +26,15 @@ We will continue to track and summarize emerging ULBM research, with particular 
 
 ## 3. Survey Findings
 
+![ULBM ROI equilibrium point](docs/assets/roi.png)
+
+![ULBM algorithmic optimization trend](docs/assets/alo.png)
+
+![ULBM effectiveness optimization taxonomy](docs/assets/effectiveness.png)
+
+These survey figures summarize the evidence axes: industrial ROI pressure, efficiency-oriented algorithmic trends, and effectiveness-oriented modeling directions.
+
+
 This is a survey repository rather than a single experimental code release, so its result-facing section summarizes evidence patterns and benchmark coverage instead of reporting a new leaderboard.
 
 | Finding | Evidence in the survey |
@@ -277,6 +286,6 @@ We welcome contributions from the community! If you have suggestions, improvemen
 ## Contact
 For paper questions, please contact:
 
-- First author: Rui Zhou.
+- First author: Rui Zhou (no verified public email found from accessible paper sources).
 - Repository questions: please open a GitHub issue in this repository.
 
