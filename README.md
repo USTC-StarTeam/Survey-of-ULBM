@@ -1,14 +1,32 @@
 
 # A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness
 
-## Overview
-This is the official repository of the paper ["*A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness*"](https://www.preprints.org/manuscript/202601.1559)
+[![Project Page](https://img.shields.io/badge/Project-Page-2454d6.svg)](https://ustc-starteam.github.io/Survey-of-ULBM/)
+[![Preprint](https://img.shields.io/badge/Preprints-2026-4b6cb7.svg)](https://www.preprints.org/manuscript/202601.1559)
+[![Survey](https://img.shields.io/badge/Topic-User%20Lifelong%20Behavior%20Modeling-087443.svg)](https://github.com/USTC-StarTeam/Survey-of-ULBM)
+
+Official repository for **"A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness"**.
+
+## 1. Paper
+
+Rui Zhou, Qinglin Jia, Bo Chen, Peng Xu, Yijia Sun, Siyuan Lou, Chaoxin Fu, Mengyuan Fu, Guoming Shen, Zheli Zhou, and others. **A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness.** Preprints, 2026.
+
+[Preprint](https://www.preprints.org/manuscript/202601.1559) / [Project Page](https://ustc-starteam.github.io/Survey-of-ULBM/) / [Code](https://github.com/USTC-StarTeam/Survey-of-ULBM) / [Citation](#citation)
 
 This survey provides an in-depth examination of existing User Lifelong Behavior Modeling (ULBM) methods from an industrial perspective, with a particular focus on their performance under the efficiency–effectiveness balance, aiming to sustain a stable return on investment (ROI) as user lifelong behavior sequences continue to grow.
 
 We will continue to track and summarize emerging ULBM research, with particular attention to approaches that have been validated in real-world industrial settings, in order to facilitate the continued advancement of this field.
 
-## Citation
+## 2. Highlights
+
+- Tracks representative ULBM methods from short-sequence recommenders to ultra-long industrial models.
+- Organizes methods by efficiency optimizations, effectiveness optimizations, and the efficiency-effectiveness balance.
+- Provides curated dataset statistics for ultra-long behavior modeling benchmarks.
+- Welcomes community contributions to keep the survey current.
+
+<a id="citation"></a>
+
+## 3. Citation
 If you find this survey useful, please cite the following paper:
 
 ```bibtex
@@ -22,6 +40,9 @@ If you find this survey useful, please cite the following paper:
 
 
 ## Table of Contents
+- [Paper](#1-paper)
+- [Highlights](#2-highlights)
+- [Citation](#3-citation)
 - [Introduction](#introduction)
 - [Survey Scope](#survey-scope)
 - [Efficiency-Effectiveness Balance](#efficiency-effectiveness-balance)
@@ -237,5 +258,5 @@ This research was conducted as a collaboration between University of Science and
 </table>
 
 ## How to Contribute
-We welcome contributions from the community! If you have suggestions, improvements, or want to add papers to the reading list, feel free to submit an issue on [GitHub Issues](https://github.com/Kuaishou-RecModel/Survey_of_ULBM/issues).
+We welcome contributions from the community! If you have suggestions, improvements, or want to add papers to the reading list, feel free to submit an issue on [GitHub Issues](https://github.com/USTC-StarTeam/Survey-of-ULBM/issues).
 
