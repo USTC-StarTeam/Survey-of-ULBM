@@ -92,7 +92,7 @@
   <header class="site-header">
     <nav class="wrap">
       <a class="brand" href="https://github.com/USTC-StarTeam/Survey-of-ULBM">USTC-StarTeam/Survey-of-ULBM</a>
-      <div class="nav-links"><a href="#1-paper">1. Paper</a><a href="#2-highlights">2. Highlights</a><a href="#3-citation">3. Citation</a><a href="#table-of-contents">Table of Contents</a><a href="#introduction">Introduction</a><a href="#survey-scope">Survey Scope</a><a href="#efficiency-effectiveness-balance">Efficiency-Effectiveness Balance</a><a href="#papers">Papers</a><a href="#datasets">Datasets</a><a href="#acknowledgement">Acknowledgement</a><a href="#how-to-contribute">How to Contribute</a><a href="#contact">Contact</a></div>
+      <div class="nav-links"><a href="#1-paper">1. Paper</a><a href="#2-highlights">2. Highlights</a><a href="#3-survey-findings">3. Survey Findings</a><a href="#4-citation">4. Citation</a><a href="#table-of-contents">Table of Contents</a><a href="#introduction">Introduction</a><a href="#survey-scope">Survey Scope</a><a href="#efficiency-effectiveness-balance">Efficiency-Effectiveness Balance</a><a href="#papers">Papers</a><a href="#datasets">Datasets</a><a href="#acknowledgement">Acknowledgement</a><a href="#how-to-contribute">How to Contribute</a><a href="#contact">Contact</a></div>
     </nav>
     <section class="hero">
       <div class="wrap">
@@ -104,7 +104,7 @@
     </section>
   </header>
   <main class="wrap">
-    <div class="toc"><a href="#1-paper">1. Paper</a><a href="#2-highlights">2. Highlights</a><a href="#3-citation">3. Citation</a><a href="#table-of-contents">Table of Contents</a><a href="#introduction">Introduction</a><a href="#survey-scope">Survey Scope</a><a href="#efficiency-effectiveness-balance">Efficiency-Effectiveness Balance</a><a href="#papers">Papers</a><a href="#datasets">Datasets</a><a href="#acknowledgement">Acknowledgement</a><a href="#how-to-contribute">How to Contribute</a><a href="#contact">Contact</a></div>
+    <div class="toc"><a href="#1-paper">1. Paper</a><a href="#2-highlights">2. Highlights</a><a href="#3-survey-findings">3. Survey Findings</a><a href="#4-citation">4. Citation</a><a href="#table-of-contents">Table of Contents</a><a href="#introduction">Introduction</a><a href="#survey-scope">Survey Scope</a><a href="#efficiency-effectiveness-balance">Efficiency-Effectiveness Balance</a><a href="#papers">Papers</a><a href="#datasets">Datasets</a><a href="#acknowledgement">Acknowledgement</a><a href="#how-to-contribute">How to Contribute</a><a href="#contact">Contact</a></div>
     <article class="content">
 <p><a href="https://ustc-starteam.github.io/Survey-of-ULBM/"><img src="https://img.shields.io/badge/Project-Page-2454d6.svg" alt="Project Page"></a>
 <a href="https://www.preprints.org/manuscript/202601.1559"><img src="https://img.shields.io/badge/Preprints-2026-4b6cb7.svg" alt="Preprint"></a>
@@ -122,8 +122,36 @@
 <li>Provides curated dataset statistics for ultra-long behavior modeling benchmarks.</li>
 <li>Welcomes community contributions to keep the survey current.</li>
 </ul>
+<h2 id="3-survey-findings">3. Survey Findings</h2>
+<p>This is a survey repository rather than a single experimental code release, so its result-facing section summarizes evidence patterns and benchmark coverage instead of reporting a new leaderboard.</p>
+<table>
+<thead><tr>
+<th>Finding</th>
+<th>Evidence in the survey</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Efficiency-effectiveness balance is the central deployment constraint.</td>
+<td>The survey frames ULBM around a stable ROI point as user histories grow longer.</td>
+</tr>
+<tr>
+<td>Efficiency methods split into algorithmic and infrastructure paths.</td>
+<td>Algorithmic methods include search-based and compression-based designs; infrastructure methods include custom kernels, precision optimization, and multi-level caching.</td>
+</tr>
+<tr>
+<td>Effectiveness methods focus on representation quality.</td>
+<td>The survey organizes them around interaction modeling, fine-grained user interest understanding, and external knowledge.</td>
+</tr>
+<tr>
+<td>The repository is also a benchmark map.</td>
+<td>The paper list and dataset section collect short-sequence, search-based, compression-based, hybrid, end-to-end, heterogeneous-behavior, user-interest, and knowledge-enhanced ULBM work.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusion:</strong> for survey-style repositories, the public-facing result section should clarify the taxonomy, evidence axes, and benchmark scope rather than inventing a conventional experiment table.</p>
 <p><a id="citation"></a></p>
-<h2 id="3-citation">3. Citation</h2>
+<h2 id="4-citation">4. Citation</h2>
 <p>If you find this survey useful, please cite the following paper:</p>
 <pre><code class="language-bibtex">@article{zhou2026survey,
   title={A Survey of User Lifelong Behavior Modeling: Perspectives on Efficiency and Effectiveness},
@@ -135,7 +163,8 @@
 <ul>
 <li><a href="#1-paper">Paper</a></li>
 <li><a href="#2-highlights">Highlights</a></li>
-<li><a href="#3-citation">Citation</a></li>
+<li><a href="#3-survey-findings">Survey Findings</a></li>
+<li><a href="#4-citation">Citation</a></li>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#survey-scope">Survey Scope</a></li>
 <li><a href="#efficiency-effectiveness-balance">Efficiency-Effectiveness Balance</a><ul>

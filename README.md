@@ -24,9 +24,22 @@ We will continue to track and summarize emerging ULBM research, with particular 
 - Provides curated dataset statistics for ultra-long behavior modeling benchmarks.
 - Welcomes community contributions to keep the survey current.
 
+## 3. Survey Findings
+
+This is a survey repository rather than a single experimental code release, so its result-facing section summarizes evidence patterns and benchmark coverage instead of reporting a new leaderboard.
+
+| Finding | Evidence in the survey |
+| --- | --- |
+| Efficiency-effectiveness balance is the central deployment constraint. | The survey frames ULBM around a stable ROI point as user histories grow longer. |
+| Efficiency methods split into algorithmic and infrastructure paths. | Algorithmic methods include search-based and compression-based designs; infrastructure methods include custom kernels, precision optimization, and multi-level caching. |
+| Effectiveness methods focus on representation quality. | The survey organizes them around interaction modeling, fine-grained user interest understanding, and external knowledge. |
+| The repository is also a benchmark map. | The paper list and dataset section collect short-sequence, search-based, compression-based, hybrid, end-to-end, heterogeneous-behavior, user-interest, and knowledge-enhanced ULBM work. |
+
+**Conclusion:** for survey-style repositories, the public-facing result section should clarify the taxonomy, evidence axes, and benchmark scope rather than inventing a conventional experiment table.
+
 <a id="citation"></a>
 
-## 3. Citation
+## 4. Citation
 If you find this survey useful, please cite the following paper:
 
 ```bibtex
@@ -42,7 +55,8 @@ If you find this survey useful, please cite the following paper:
 ## Table of Contents
 - [Paper](#1-paper)
 - [Highlights](#2-highlights)
-- [Citation](#3-citation)
+- [Survey Findings](#3-survey-findings)
+- [Citation](#4-citation)
 - [Introduction](#introduction)
 - [Survey Scope](#survey-scope)
 - [Efficiency-Effectiveness Balance](#efficiency-effectiveness-balance)
